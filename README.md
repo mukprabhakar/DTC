@@ -1,72 +1,67 @@
 Automated Bus Scheduling and Route Management System
 Overview
-The Automated Bus Scheduling and Route Management System is designed to optimize the scheduling and route planning for public bus transportation, specifically for the Delhi Transport Corporation (DTC). The system leverages algorithms, data analytics, and Geographic Information System (GIS) technologies to automate various aspects of bus scheduling and route management, improving operational efficiency and service reliability.
+The Automated Bus Scheduling and Route Management System is a comprehensive software solution developed using Spring Boot, designed to improve the efficiency and reliability of the Delhi Transport Corporation (DTC). The system automates bus scheduling and route management by leveraging algorithms, data analytics, and Geographic Information System (GIS) technologies.
 
-Key Features
-Linked Duty Scheduling: Assign a specific crew to a bus for the entire shift, ensuring consistency and accountability.
-Unlinked Duty Scheduling: Allow crews to hand over buses after completing their trips, managing rest periods and reassignments.
-Route Management: Map existing routes, draw new routes, and highlight overlaps to optimize the bus network.
-Real-Time Monitoring: Track and manage crew assignments and bus schedules in real-time.
-Reports and Analytics: Generate detailed reports to aid in decision-making and improve service coverage.
-Technologies Used
-Spring Boot: Backend framework for building robust and scalable applications.
-MySQL: Database management system to handle scheduling, route, and crew data.
-GIS Tools: For visualizing and optimizing bus routes.
-Algorithms: Used for scheduling and route optimization to reduce congestion and enhance efficiency.
-Architecture Diagram
-
-Prerequisites
-Java 11+
-MySQL 8.0+
-Maven 3.6+
-GIS Software (e.g., QGIS, Google Maps API)
+Features
+1. Linked Duty Scheduling
+Crew-Bus Assignment: Assign a specific crew to a bus for the entire duration of their shift, ensuring continuity and familiarity.
+Crew Management: Tools to manage and monitor crew assignments, improving accountability and service quality.
+2. Unlinked Duty Scheduling
+Bus Handover: Allows crews to hand over buses to other crew members after completing their trips, optimizing resource utilization.
+Rest Period Management: Automatically manages and assigns rest periods for crew members before reassigning them to new duties.
+3. Route Management
+Route Mapping: Visual representation of all existing routes within the bus network.
+New Route Creation: Tools to draw and propose new routes, with automatic highlighting of overlaps with existing routes.
+Route Optimization: Algorithms to reduce congestion, improve service coverage, and optimize resource utilization.
 Installation
-Clone the Repository
+Prerequisites
+Java 17 or later
+Maven 3.6.3 or later
+MySQL or any other relational database
+Steps
+Clone the Repository:
 
 bash
 Copy code
-git clone https://github.com/yourusername/automated-bus-scheduling-system.git
-cd automated-bus-scheduling-system
-Set Up the Database
+git clone https://github.com/yourusername/automated-bus-scheduling.git
+cd automated-bus-scheduling
+Configure Database:
+Update the application.properties file in the src/main/resources directory with your database configurations.
 
-Create a new MySQL database:
-sql
-Copy code
-CREATE DATABASE bus_scheduling_db;
-Update the application.properties file with your MySQL credentials:
 properties
 Copy code
-spring.datasource.url=jdbc:mysql://localhost:3306/bus_scheduling_db
+spring.datasource.url=jdbc:mysql://localhost:3306/dtc_db
 spring.datasource.username=your_username
 spring.datasource.password=your_password
-Build and Run the Application
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+Install Dependencies and Build the Project:
 
-Use Maven to build and run the application:
 bash
 Copy code
 mvn clean install
+Run the Application:
+
+bash
+Copy code
 mvn spring-boot:run
 Usage
-Accessing the System: Once the application is running, you can access it via http://localhost:8080.
-Managing Schedules: Use the interface to create and manage both linked and unlinked duty schedules.
-Route Management: Visualize existing routes and plan new routes using the integrated GIS tools.
-Monitoring: Real-time monitoring of crew assignments and bus schedules is available from the dashboard.
-Flow Diagrams
-Linked Duty Scheduling
-Unlinked Duty Scheduling
-Route Management
+Access the System: Navigate to http://localhost:8080 in your browser.
+Dashboard: The dashboard provides an overview of current operations, including active routes, bus assignments, and crew schedules.
+Scheduling: Use the scheduling module to create and manage linked and unlinked duty schedules for bus crews.
+Route Planning: The route planning module allows you to map existing routes, create new ones, and optimize service coverage.
+Technologies Used
+Backend: Spring Boot, Spring Data JPA, Spring Security
+Frontend: Thymeleaf, HTML, CSS, JavaScript
+Database: MySQL
+GIS: GIS API (e.g., Google Maps, Mapbox)
+Other: Algorithms for scheduling, data analytics
 Contributing
-We welcome contributions to this project! Please follow these steps:
+Contributions are welcome! Please fork the repository and create a pull request with your proposed changes. Ensure that your code is well-documented and follows the project's coding standards.
 
-Fork the repository.
-Create a new branch (git checkout -b feature-branch).
-Commit your changes (git commit -am 'Add new feature').
-Push to the branch (git push origin feature-branch).
-Create a pull request.
 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License. See the LICENSE file for details.
 
 Contact
-For questions or support, please contact:
+For any questions or support, please contact Mukesh Pal at mukesh.mmp1234@gmail.com.
 
-Mukesh Prabhakar - mukesh.mmp1234@gmail.com
